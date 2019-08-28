@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.conf import settings
 
 
 def hello_world(request):
@@ -8,5 +7,5 @@ def hello_world(request):
 
 
 def index(request):
-    return render(request, "app.html", {'BUNDLED': settings.BUNDLED})
+    return render(request, "app.html")
     # return HttpResponse("Hello, World!")

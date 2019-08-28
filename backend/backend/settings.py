@@ -15,7 +15,6 @@ import sys
 
 # App can be ran inside a bundle
 # after being packaged
-BUNDLED = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -133,15 +132,6 @@ MEDIA_ROOT = None
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
-
-if BUNDLED:
-    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-    sys.path.insert(0, PROJECT_ROOT)
-
-    # This is for Mac OS
-    # Check here for current OS so we know where to store the static path
-    STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.realpath(os.path.join(os.pardir, "Resources", STATIC_URL.strip("/")))
 
 WEBPACK_LOADER = {
     'DEFAULT': {
